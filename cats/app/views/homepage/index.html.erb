@@ -1,0 +1,18 @@
+<h1>Welcome to CATS</h2>
+<img src = http://41.media.tumblr.com/77884b58878a2db94be268e7ff81fb69/tumblr_nc7ecu7um01s2io8jo1_1280.jpg
+	alt = 'sumo'/>
+
+<h2>Sign Up</h2>
+<%= form_for(@user) do |f|%>
+	<div class='field'>
+		<%= f.label 'username:'%><br/>
+		<%= f.text_field :name %>
+	</div>
+	<div class='field'>
+		<%= f.label 'password:'%><br/>
+		<%= f.text_field :pass %>
+	</div>
+	<div class='actions'>
+		<%= f.submit 'Sign Up' %>
+	</div>
+<% end %>
