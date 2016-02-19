@@ -4,6 +4,10 @@ class CatsController < ApplicationController
 		@user = User.new(user_param)
 	end
 
+	def index
+		@cats = Cat.all
+	end
+
 	def create
 		@user = User.new(user_param)
 
