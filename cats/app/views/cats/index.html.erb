@@ -2,7 +2,7 @@
 
 <% @cats.each do |cat| %>
 <h2><%= cat.name %></h2>
-<p><%= cat.age %></p>
-<img src = cat.picture
+<p>Age is <%= cat.age %></p>
+<img src = <%= cat.picture %>
 	alt = 'picture of this kitty'/>
 <% end %>
