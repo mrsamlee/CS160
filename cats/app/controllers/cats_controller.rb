@@ -22,6 +22,11 @@ class CatsController < ApplicationController
     	end
 	end
 
+	def view
+		format.html { redirect_to :users, notice: 'View Users' }
+		format.json { render :show, status: :created, location: :users}
+	end
+
 	private
 	def user_param
 		params.require(:user).permit(:name, :pass)

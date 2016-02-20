@@ -1,6 +1,6 @@
 Rails.application.routes.draw do
 
-  resources :users, :cats
+  resources :userinfo, :cats
   root 'homepage#index'
   
   # The priority is based upon order of creation: first created -> highest priority.

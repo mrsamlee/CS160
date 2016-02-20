@@ -1,0 +1,9 @@
+<h1>List of Users</h1>
+
+<div><a href="http://localhost:3000/">Return to form</a></div>
+<div><a href="http://localhost:3000/cats/">View Cats</a></div>
+
+<% @users.each do |user| %>
+<div>User: <%= user.name %></div>
+<div>Pass: <%= user.pass %></div>
+<% end %>
