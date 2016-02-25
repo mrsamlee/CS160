@@ -1,0 +1,29 @@
+<h1>Request List</h1>
+
+<h1>Listing Requests</h1>
+
+<table>
+  <thead>
+    <tr>
+      <th>Consumer</th>
+      <th>Name</th>
+      <th>Ingredients</th>
+      <th>Location</th>
+      <th colspan="3"></th>
+    </tr>
+  </thead>
+
+  <tbody>
+    <% @requests.each do |request| %>
+      <tr>
+        <td><%= request.consumer %></td>
+        <td><%= request.name %></td>
+        <td><%= request.ingredients %></td>
+        <td><%= request.location %></td>
+        <th>BUY BUTTON PLACEHOLDER</th>
+      </tr>
+    <% end %>
+  </tbody>
+</table>
+
+<%= link_to 'Back', products_path %>

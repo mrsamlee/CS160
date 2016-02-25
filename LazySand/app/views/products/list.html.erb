@@ -1,0 +1,31 @@
+<h1>Product List</h1>
+
+<h1>Listing products</h1>
+
+<table>
+  <thead>
+    <tr>
+      <th>Producer</th>
+      <th>Name</th>
+      <th>Price</th>
+      <th>Ingredients</th>
+      <th>Location</th>
+      <th colspan="3"></th>
+    </tr>
+  </thead>
+
+  <tbody>
+    <% @products.each do |product| %>
+      <tr>
+        <td><%= product.producer %></td>
+        <td><%= product.name %></td>
+        <td><%= product.price %></td>
+        <td><%= product.ingredients %></td>
+        <td><%= product.location %></td>
+        <th>BUY BUTTON PLACEHOLDER</th>
+      </tr>
+    <% end %>
+  </tbody>
+</table>
+
+<%= link_to 'Back', requests_path %>
