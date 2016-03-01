@@ -1,5 +1,14 @@
+<ul class="nav nav-tabs" role="tablist">
+  <li><%= link_to 'List of Sandwiches', products_path %></li>
+  <li class="active"><%= link_to 'New Sandwich', new_product_path %></li>
+  <li><%= link_to 'Nearby Requests', requests_list_path %></li>
+</ul>
+
 <h1>New Product</h1>
 
 <%= render 'form' %>
 
-<%= link_to 'Back', products_path %>
+<%= link_to products_path, class: 'btn btn-primary' do %>
+  <i class="glyphicon glyphicon-chevron-left"></i> Back
+<% end %>
+

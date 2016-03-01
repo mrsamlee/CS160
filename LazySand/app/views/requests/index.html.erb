@@ -1,8 +1,14 @@
+<ul class="nav nav-tabs" role="tablist">
+  <li class="active"><%= link_to 'List of Requests', requests_path %></li>
+  <li><%= link_to 'New Requests', new_request_path %></li>
+  <li><%= link_to 'Nearby Sandwiches', products_list_path %></li>
+</ul>
+
 <p id="notice"><%= notice %></p>
 
 <h1>Listing Requests</h1>
 
-<table>
+<table class = "table">
   <thead>
     <tr>
       <th>Consumer</th>
@@ -30,6 +36,6 @@
 
 <br>
 
-<%= link_to 'New Request', new_request_path %>
-<p><%= link_to 'Product List', products_list_path %></p>
-<p><%= link_to "Logout", root_path %></p>
+<p><%= link_to root_path, class: 'btn btn-primary' do %>
+  <i class="glyphicon glyphicon-chevron-left"></i> Logout
+<% end %></p>

@@ -1,8 +1,14 @@
+<ul class="nav nav-tabs" role="tablist">
+  <li><%= link_to 'List of Sandwiches', products_path %></li>
+  <li><%= link_to 'New Sandwich', new_product_path %></li>
+  <li class="active"><%= link_to 'Nearby Requests', requests_list_path %></li>
+</ul>
+
 <h1>Request List</h1>
 
 <h1>Listing Requests</h1>
 
-<table>
+<table class = "table">
   <thead>
     <tr>
       <th>Consumer</th>
@@ -20,10 +26,12 @@
         <td><%= request.name %></td>
         <td><%= request.ingredients %></td>
         <td><%= request.location %></td>
-        <th>BUY BUTTON PLACEHOLDER</th>
+        <th><button class="btn btn-danger" type="submit"><i class="glyphicon glyphicon-plus"></i> Buy</button></th>
       </tr>
     <% end %>
   </tbody>
 </table>
 
-<%= link_to 'Back', products_path %>
+<%= link_to products_path, class: 'btn btn-primary' do %>
+  <i class="glyphicon glyphicon-chevron-left"></i> Back
+<% end %>

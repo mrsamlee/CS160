@@ -8,7 +8,25 @@
 </head>
 <body>
 
-<%= yield %>
+ <%= render 'shared/navigation' %>
+
+ <div id="main-container" class="container">
+ 	<div class="row">
+        <div class="col-xs-12">
+          <% flash.each do |name, msg| -%>
+            <%= content_tag :div, msg, class: "alert alert-#{name}" %>
+          <% end -%>
+        </div>
+      </div>
+      <div class="row">
+        <div class="col-xs-3">
+          <h3>Lazy Sandwich</h3>
+        </div>
+        <div class="col-xs-9">
+          <%= yield %>
+        </div>
+      </div>
+    </div>
 
 </body>
 </html>

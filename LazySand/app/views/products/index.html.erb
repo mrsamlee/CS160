@@ -1,8 +1,12 @@
-<p id="notice"><%= notice %></p>
+<ul class="nav nav-tabs" role="tablist">
+  <li class="active"><%= link_to 'List of Sandwiches', products_path %></li>
+  <li><%= link_to 'New Sandwich', new_product_path %></li>
+  <li><%= link_to 'Nearby Requests', requests_list_path %></li>
+</ul>
 
 <h1>Listing Products</h1>
 
-<table>
+<table class = "table">
   <thead>
     <tr>
       <th>Producer</th>
@@ -32,6 +36,6 @@
 
 <br>
 
-<%= link_to 'New Product', new_product_path %>
-<p><%= link_to 'Request List', requests_list_path %></p>
-<p><%= link_to "Logout", root_path %></p>
+<p><%= link_to root_path, class: 'btn btn-primary' do %>
+  <i class="gglyphicon glyphicon-chevron-left"></i> Logout
+<% end %></p>
