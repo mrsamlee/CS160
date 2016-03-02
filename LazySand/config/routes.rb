@@ -4,6 +4,8 @@ Rails.application.routes.draw do
   get 'products/list'
   get 'requests/transactions'
   get 'products/transactions'
+  get 'requests/confirm'
+  get 'products/confirm'
 
   resources :requests
   resources :products

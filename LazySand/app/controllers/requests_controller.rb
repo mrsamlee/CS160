@@ -12,6 +12,12 @@ class RequestsController < ApplicationController
   def show
   end
 
+  # GET /requests/confirm
+  def confirm
+    @requests = Request.all
+    @product = Product.all
+  end
+
   # GET /requests/list
   def list
     @requests = Request.all
