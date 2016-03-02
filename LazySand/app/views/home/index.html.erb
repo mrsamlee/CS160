@@ -1,3 +1,15 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>LazySand</title>
+  <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track' => true %>
+  <%= javascript_include_tag 'application', 'data-turbolinks-track' => true %>
+  <%= csrf_meta_tags %>
+</head>
+<body>
+
+<%= render 'shared/navigation' %>
+
 <h1>Welcome</h1>
 
 <<img src = http://cdn.speckyboy.com/wp-content/uploads/2014/05/ux_ui_02.jpg
@@ -14,3 +26,7 @@
 <p><%= link_to requests_path, class: 'btn btn-primary' do %>
   <i class="glyphicon glyphicon-chevron-right"></i> Consumer Login
 <% end %></p>
+
+
+</body>
+</html>
