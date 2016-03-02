@@ -12,8 +12,13 @@ class RequestsController < ApplicationController
   def show
   end
 
-  # GET /request/list
+  # GET /requests/list
   def list
+    @requests = Request.all
+  end
+
+  # GET /requests/transactions
+  def transactions
     @requests = Request.all
   end
 

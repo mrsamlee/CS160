@@ -4,7 +4,8 @@
 <ul class="nav nav-tabs" role="tablist">
   <li><%= link_to 'List of Requests', requests_path %></li>
   <li><%= link_to 'New Requests', new_request_path %></li>
-  <li class="active"><%= link_to 'Nearby Sandwiches', products_list_path %></li>
+  <li class="active"><%= link_to 'Nearby Sandwiches', products_list_path, 'data-no-turbolink' => true %></li>
+  <li><%= link_to 'Pending', products_transactions_path %></li>
 </ul>
 
 <h1>Listing products</h1>
@@ -48,7 +49,7 @@ handler.buildMap({ internal: {id: 'multi_markers'}}, function(){
         <td><%= product.price %></td>
         <td><%= product.ingredients %></td>
         <td><%= product.location %></td>
-        <th><button class="btn btn-danger" type="submit"><i class="glyphicon glyphicon-plus"></i> Buy</button></th>
+        <th><button class="btn btn-success" type="submit"><i class="glyphicon glyphicon-plus"></i> Buy</button></th>
       </tr>
     <% end %>
   </tbody>

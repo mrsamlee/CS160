@@ -2,6 +2,8 @@ Rails.application.routes.draw do
   get 'home/index'
   get 'requests/list'
   get 'products/list'
+  get 'requests/transactions'
+  get 'products/transactions'
 
   resources :requests
   resources :products

@@ -1,7 +1,8 @@
 <ul class="nav nav-tabs" role="tablist">
   <li class="active"><%= link_to 'List of Sandwiches', products_path %></li>
   <li><%= link_to 'New Sandwich', new_product_path %></li>
-  <li><%= link_to 'Nearby Requests', requests_list_path %></li>
+  <li><%= link_to 'Nearby Requests', requests_list_path, 'data-no-turbolink' => true %></li>
+  <li><%= link_to 'Pending', requests_transactions_path %></li>
 </ul>
 
 <h1>Listing Products</h1>
