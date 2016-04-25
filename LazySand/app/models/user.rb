@@ -1,3 +1,6 @@
 class User < ActiveRecord::Base
-	belongs_to :accounts, class_name: 'Account', foreign_key: 'account_id'
+	has_many :postings
+	has_many :transactions
+	has_many :reviews
+	belongs_to :account
 end
