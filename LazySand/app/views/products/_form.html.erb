@@ -12,31 +12,25 @@
   <% end %>
 
 
+  <h2> Real shit </h2>
 
+   <div class="field">
+    <%= f.label :name %><br>
+    <%= f.text_field :name %>
+  </div>
+
+  <div class="field">
+    <%= f.label :price %><br>
+    <%= f.text_field :price %>
+  </div>
+
+  <h2> Fake shit </h2>
 
   <div class="field">
     <%= f.label :producer %><br>
     <%= f.text_field :producer %>
   </div>
 
-  <div class="field">
-    <p>WHYYY</p>
-  <% fields_for (@bread), Bread.new do |u| %>
-    <p>WHYYY</p>
-    <%= u.label :name %><br>
-    <%= u.text_field :name %>
-
-  <% end %>
-  </div>
-
-    <div class="field">
-  <% fields_for (@ingredient), Ingredient.new do |s| %>
-
-    <%= s.label :name %><br>
-    <%= s.text_field :name %>
-
-  <% end %>
-  </div>
 
   <div class="field">
     <%= f.label :name %><br>

@@ -46,6 +46,10 @@ class ProductsController < ApplicationController
   # POST /products.json
   def create
     @product = Product.new(product_params)
+    @sandwich = Sandwich.new
+    @user = User.new
+    @ingredient = Ingredient.new
+    @bread = Bread.new
 
     respond_to do |format|
       if @product.save
@@ -89,15 +93,30 @@ class ProductsController < ApplicationController
     # Use callbacks to share common setup or constraints between actions.
     def set_product
       @product = Product.find(params[:id])
-      @posting = Posting.find(params[:id])
-      @user = User.find(parmas[:id])
-      @sandwich = Sandwich.find(params[:id])
-      @ingredients = Ingredient.find(params[:id])
-      @breads = Bread.find(params[:id])
     end
 
     # Never trust parameters from the scary internet, only allow the white list through.
     def product_params
       params.require(:product).permit(:producer, :name, :price, :ingredients, :location)
+    end
+
+    # Never trust parameters from the scary internet, only allow the white list through.
+    def sandwich_params
+      params.require(:sandwich).permit(:price)
+    end
+
+    # Never trust parameters from the scary internet, only allow the white list through.
+    def ingredient_params
+      params.require(:ingredient).permit(:name)
+    end
+
+    # Never trust parameters from the scary internet, only allow the white list through.
+    def bread_params
+      params.require(:bread).permit(:name)
+    end
+
+    # Never trust parameters from the scary internet, only allow the white list through.
+    def user_params
+      params.require(:user).permit(:about, :avatar)
     end
 end
