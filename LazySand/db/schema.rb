@@ -11,7 +11,11 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
+<<<<<<< HEAD
 ActiveRecord::Schema.define(version: 20160425052221) do
+=======
+ActiveRecord::Schema.define(version: 20160425035955) do
+>>>>>>> Added a function Sign up page, need to link it to the homepage and add css
 
   create_table "accounts", force: :cascade do |t|
     t.string   "username"
@@ -35,6 +39,7 @@ ActiveRecord::Schema.define(version: 20160425052221) do
   end
 
   create_table "postings", force: :cascade do |t|
+<<<<<<< HEAD
     t.datetime "created_at",  null: false
     t.datetime "updated_at",  null: false
     t.integer  "sandwich_id"
@@ -43,6 +48,11 @@ ActiveRecord::Schema.define(version: 20160425052221) do
 
   add_index "postings", ["sandwich_id"], name: "index_postings_on_sandwich_id"
   add_index "postings", ["user_id"], name: "index_postings_on_user_id"
+=======
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+  end
+>>>>>>> Added a function Sign up page, need to link it to the homepage and add css
 
   create_table "products", force: :cascade do |t|
     t.string   "producer"
@@ -67,15 +77,21 @@ ActiveRecord::Schema.define(version: 20160425052221) do
     t.text     "content"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
+<<<<<<< HEAD
     t.integer  "user_id"
   end
 
   add_index "reviews", ["user_id"], name: "index_reviews_on_user_id"
 
+=======
+  end
+
+>>>>>>> Added a function Sign up page, need to link it to the homepage and add css
   create_table "sandwiches", force: :cascade do |t|
     t.float    "price"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
+<<<<<<< HEAD
     t.integer  "bread_id"
   end
 
@@ -109,4 +125,24 @@ ActiveRecord::Schema.define(version: 20160425052221) do
 
   add_index "users", ["account_id"], name: "index_users_on_account_id"
 
+=======
+  end
+
+  create_table "transactions", force: :cascade do |t|
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+  end
+
+  create_table "users", force: :cascade do |t|
+    t.string   "first_name"
+    t.string   "last_name"
+    t.string   "email"
+    t.string   "password_digest"
+    t.text     "about"
+    t.string   "avatar"
+    t.datetime "created_at",      null: false
+    t.datetime "updated_at",      null: false
+  end
+
+>>>>>>> Added a function Sign up page, need to link it to the homepage and add css
 end
