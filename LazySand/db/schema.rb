@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20160425041536) do
+ActiveRecord::Schema.define(version: 20160425052221) do
 
   create_table "accounts", force: :cascade do |t|
     t.string   "username"
@@ -35,15 +35,13 @@ ActiveRecord::Schema.define(version: 20160425041536) do
   end
 
   create_table "postings", force: :cascade do |t|
-    t.datetime "created_at",     null: false
-    t.datetime "updated_at",     null: false
+    t.datetime "created_at",  null: false
+    t.datetime "updated_at",  null: false
     t.integer  "sandwich_id"
-    t.integer  "transaction_id"
     t.integer  "user_id"
   end
 
   add_index "postings", ["sandwich_id"], name: "index_postings_on_sandwich_id"
-  add_index "postings", ["transaction_id"], name: "index_postings_on_transaction_id"
   add_index "postings", ["user_id"], name: "index_postings_on_user_id"
 
   create_table "products", force: :cascade do |t|
@@ -95,8 +93,10 @@ ActiveRecord::Schema.define(version: 20160425041536) do
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
     t.integer  "user_id"
+    t.integer  "posting_id"
   end
 
+  add_index "transactions", ["posting_id"], name: "index_transactions_on_posting_id"
   add_index "transactions", ["user_id"], name: "index_transactions_on_user_id"
 
   create_table "users", force: :cascade do |t|

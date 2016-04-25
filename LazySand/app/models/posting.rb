@@ -1,5 +1,6 @@
 class Posting < ActiveRecord::Base
 	belongs_to :sandwich
-	belongs_to :transaction
-	belongs_to :user
+	belongs_to :user	
+	has_many :transactions
+	accepts_nested_attributes_for :sandwich, :user
 end
