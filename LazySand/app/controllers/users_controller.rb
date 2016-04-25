@@ -18,4 +18,9 @@ class UsersController < ApplicationController
     params.require(:user).permit(:first_name, :last_name, :email, :password)
   end
 
+def index
+   @user = User.find(params[:id])
+   @reviews = @user.reviews
+end
+
 end
