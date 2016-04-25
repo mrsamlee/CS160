@@ -7,6 +7,9 @@ Rails.application.routes.draw do
   get 'requests/confirm'
   get 'products/confirm'
 
+  get 'signup' => 'users#new'
+  resources :users
+
   resources :requests
   resources :products
   # The priority is based upon order of creation: first created -> highest priority.
