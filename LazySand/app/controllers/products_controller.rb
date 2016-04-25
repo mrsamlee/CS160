@@ -5,6 +5,11 @@ class ProductsController < ApplicationController
   # GET /products.json
   def index
     @products = Product.all
+    @postings = Posting.all
+    @users = User.all
+    @sandwiches = Sandwich.all
+    @ingredients = Ingredient.all
+    @breads = Bread.all
   end
 
   # GET /products/1
@@ -15,7 +20,7 @@ class ProductsController < ApplicationController
   # GET /products/confirm
   def confirm
     @requests = Request.all
-    @product = Product.all
+    @products = Product.all
   end
 
   # GET /products/list
@@ -23,14 +28,14 @@ class ProductsController < ApplicationController
     @products = Product.all
   end
 
-  # GET /products/transactions
-  def transactions
-    @products = Product.all
-  end
-
   # GET /products/new
   def new
     @product = Product.new
+    @posting = Posting.new
+    @user = User.new
+    @sandwich = Sandwich.new
+    @ingredient = Ingredient.new
+    @bread = Bread.new
   end
 
   # GET /products/1/edit
@@ -84,6 +89,11 @@ class ProductsController < ApplicationController
     # Use callbacks to share common setup or constraints between actions.
     def set_product
       @product = Product.find(params[:id])
+      @posting = Posting.find(params[:id])
+      @user = User.find(parmas[:id])
+      @sandwich = Sandwich.find(params[:id])
+      @ingredients = Ingredient.find(params[:id])
+      @breads = Bread.find(params[:id])
     end
 
     # Never trust parameters from the scary internet, only allow the white list through.
