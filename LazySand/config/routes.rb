@@ -6,7 +6,9 @@ Rails.application.routes.draw do
   get 'products/transactions'
   get 'requests/confirm'
   get 'products/confirm'
-
+  get 'reviews' => 'reviews#index'
+  get 'reviews/new' => 'reviews#new'
+  post 'reviews' => 'reviews#create'
   get 'signup' => 'users#new'
   resources :users
 
