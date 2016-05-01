@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Lazy Sandwich</title>
+  <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track' => true %>
+  <%= javascript_include_tag 'application', 'data-turbolinks-track' => true %>
+  <%= csrf_meta_tags %>
+  <meta http-equiv="refresh" content="10">
+</head>
+<body>
+<div id="wrapper">
+
+<% if user_signed_in? -%>
+	<ul class="nav navbar-nav navbar-right">
+		<li><%= link_to 'Postings', postings_path %></li>
+		<li><%= link_to 'Orders', transactions_path %></li>
+		<li><%= link_to 'Sign out', destroy_user_session_path, :method => :delete %></li>
+	</ul>
+<% else -%>
+	<ul class="nav navbar-nav pull-right">
+		<li><%= link_to 'Sign up', new_user_registration_path %></li>
+		<li><%= link_to 'Sign in', new_user_session_path %></li>
+	</ul>
+<% end -%>
+
+<% if user_signed_in? %>
+	<%= "welcome, #{current_user.email}" %>
+<% end %>
+<main id="content">
+<%= yield %>
+</main>
+
+</div>
+</body>
+</html>

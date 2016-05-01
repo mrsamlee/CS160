@@ -1,0 +1,51 @@
+<p id="notice"><%= notice %></p>
+<%= link_to 'Back', postings_path %>
+
+<table class = "table">
+  <thead>
+    <tr>
+      <th>Name</th>
+      <th>Ingredients</th>
+      <th>Price</th>
+      <th colspan="3"></th>
+    </tr>
+  </thead>
+
+  <tbody>
+     <tr>
+       <td><%= @posting.name %></td>
+       <td><%= @posting.ingredients %></td>
+       <td><%= @posting.price %></td>
+      </tr>
+  </tbody>
+</table>
+
+<% if @posting.user == current_user %>
+  <div class="btn-group">
+	<%= link_to 'Edit', edit_posting_path(@posting) %> |
+	<%= link_to 'Destroy', @posting, method: :delete, data: { confirm: 'Are you sure?' } %>
+  </div>
+<% end %>
+
+<h2>Reviews</h2>
+<div id="reviews">
+	<%= render :partial => @posting.reviews %>
+</div>
+ 
+<% if user_signed_in? && @posting.user != current_user%>
+<h2>Add a review:</h2>
+<%= form_for([@posting, @posting.reviews.build]) do |f| %>
+  <p>
+    <%= f.label :rating %><br>
+    <%= f.select :rating, [["5 - TAKE MY MONEY",5], ["4 - NOT BAD", 4],
+    					["3 - MEH",3],["2 - NOT GREAT",2 ],["1 - BAD", 1]] %>
+  </p>
+  <p>
+    <%= f.label :content %><br>
+    <%= f.text_area :content %>
+  </p>
+  <p>
+    <%= f.submit %>
+  </p>
+<% end %>
+<% end %>
