@@ -38,6 +38,7 @@ handler.buildMap({ provider: {}, internal: {id: 'map'}}, function(){
         <%if posting.user == current_user %>
         <td><%= link_to 'Edit', edit_posting_path(posting) %></td>
         <td><%= link_to 'Destroy', posting, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+        <% elsif user_signed_in? %>
         <td><%= link_to 'Buy', make_order_path(posting), method: :post, class: 'btn btn-success' %><td>
         <% end %>
       </tr>
