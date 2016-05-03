@@ -27,6 +27,22 @@
                           ["7.00",7],["7.50",7.50],["8.00",8], ["8.50", 8.5],
                           ["9.00",9],["9.50",9.50],["10.00",10],["10.50", 10.50],]%>
   </div>
+  <div class="field">
+    <%= f.label "Street Address" %><br>
+    <%= f.text_field :street %>
+  </div>
+  <div class="field">
+    <%= f.label "City" %><br>
+    <%= f.text_field :city %>
+  </div>
+  <div class="field">
+    <%= f.label "State" %><br>
+    <%= f.text_field :state %>
+  </div>
+  <div class="field">
+    <%= f.label "Country" %><br>
+    <%= f.text_field :country %>
+  </div>
   <div class="actions">
     <%= f.submit %>
   </div>

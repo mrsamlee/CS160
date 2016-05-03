@@ -6,6 +6,14 @@ class PostingsController < ApplicationController
   # GET /postings.json
   def index
     @postings = Posting.all
+    @json = Gmaps4rails.build_markers(@postings) do |posting, marker|
+            posting_link = view_context.link_to posting.name, posting_path(posting)
+            marker.lat posting.latitude
+            marker.lng posting.longitude
+            marker.title posting.name
+            marker.infowindow "<h4><u>#{posting_link}</u></h4> 
+                       <i>#{posting.street}</i>"
+    end
   end
 
   # GET /postings/1
@@ -73,6 +81,6 @@ class PostingsController < ApplicationController
 
     # Never trust parameters from the scary internet, only allow the white list through.
     def posting_params
-      params.require(:posting).permit(:name, :ingredients, :price)
+      params.require(:posting).permit(:name, :ingredients, :price, :street, :city, :state, :country)
     end
 end

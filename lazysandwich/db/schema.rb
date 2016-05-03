@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20160430091315) do
+ActiveRecord::Schema.define(version: 20160503013043) do
 
   create_table "postings", force: :cascade do |t|
     t.datetime "created_at",  null: false
@@ -20,6 +20,12 @@ ActiveRecord::Schema.define(version: 20160430091315) do
     t.string   "name"
     t.float    "price"
     t.text     "ingredients"
+    t.float    "latitude"
+    t.float    "longitude"
+    t.string   "street"
+    t.string   "city"
+    t.string   "state"
+    t.string   "country"
   end
 
   create_table "postings_transactions", id: false, force: :cascade do |t|
@@ -71,6 +77,9 @@ ActiveRecord::Schema.define(version: 20160430091315) do
     t.string   "last_sign_in_ip"
     t.datetime "created_at",                          null: false
     t.datetime "updated_at",                          null: false
+    t.float    "latitude"
+    t.float    "longitude"
+    t.string   "ipaddress"
   end
 
   add_index "users", ["email"], name: "index_users_on_email", unique: true
