@@ -5,11 +5,15 @@ class PostingsController < ApplicationController
   # GET /postings
   # GET /postings.json
   def index
+<<<<<<< HEAD
     if params[:search].present?
       @postings = Posting.near(params[:search])
     else
       @postings = Posting.all
     end
+=======
+    @postings = Posting.all
+>>>>>>> Added the demo project
     @json = Gmaps4rails.build_markers(@postings) do |posting, marker|
             posting_link = view_context.link_to posting.name, posting_path(posting)
             marker.lat posting.latitude
@@ -17,11 +21,14 @@ class PostingsController < ApplicationController
             marker.title posting.name
             marker.infowindow "<h4><u>#{posting_link}</u></h4> 
                        <i>#{posting.street}</i>"
+<<<<<<< HEAD
             marker.picture({
                   :url => "http://i.picresize.com/images/2016/05/03/wx4ua.png",
                   :width   => 32,
                   :height  => 32
                  })
+=======
+>>>>>>> Added the demo project
     end
   end
 
