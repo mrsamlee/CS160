@@ -1,0 +1,21 @@
+<nav class="navbar navbar-default" role="navigation">
+  <div class="container">
+    <div class="navbar-header">
+      <a class="navbar-brand" href="/">Lazy Sandwich</a>
+    </div>
+
+<% if user_signed_in? -%>
+  <ul class="nav navbar-nav navbar-right">
+    <li><%= link_to 'Postings', postings_path %></li>
+    <li><%= link_to 'Orders', transactions_path %></li>
+    <li><%= link_to 'Sign out', destroy_user_session_path, :method => :delete %></li>
+  </ul>
+<% else -%>
+  <ul class="nav navbar-nav pull-right">
+    <li><%= link_to 'Sign up', new_user_registration_path %></li>
+    <li><%= link_to 'Log in', new_user_session_path %></li>
+  </ul>
+<% end -%>
+
+  </div>
+</nav>

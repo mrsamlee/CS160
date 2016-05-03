@@ -1,0 +1,51 @@
+<script src="//maps.google.com/maps/api/js?v=3.18&sensor=false&client=&key=&libraries=geometry&language=&hl=&region="></script> 
+<script src="//google-maps-utility-library-v3.googlecode.com/svn/tags/markerclustererplus/2.0.14/src/markerclusterer_packed.js"></script>
+
+<h1>Listing Postings</h1>
+
+<div style='width: 800px;'>
+  <div id="map" style='width: 800px; height: 400px;'></div>
+</div>
+
+<script type="text/javascript">
+var handler = Gmaps.build('Google');
+handler.buildMap({ provider: {}, internal: {id: 'map'}}, function(){
+      var markers = handler.addMarkers(<%=raw @json.to_json %>);
+      handler.bounds.extendWith(markers);
+      handler.fitMapToBounds();
+});
+</script>
+
+<table class = "table table-hover">
+  <thead>
+    <tr>
+      <th>Producer</th>
+      <th>Sandwich</th>
+      <th>Price</th>
+      <th>Ingredients</th>
+      <th colspan="3"></th>
+    </tr>
+  </thead>
+
+  <tbody>
+    <% @postings.each do |posting| %>
+      <tr>
+        <td><%= posting.user.email %><td>
+        <td><%= posting.name %></td>
+        <td><%= posting.price %></td>
+        <td><%= posting.ingredients %></td>
+        <td><%= link_to 'Show', posting %></td>
+        <%if posting.user == current_user %>
+        <td><%= link_to 'Edit', edit_posting_path(posting) %></td>
+        <td><%= link_to 'Destroy', posting, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+        <% elsif user_signed_in? %>
+        <td><%= link_to 'Buy', make_order_path(posting), method: :post, class: 'btn btn-success' %><td>
+        <% end %>
+      </tr>
+    <% end %>
+  </tbody>
+</table>
+
+<br>
+
+<%= link_to 'New Posting', new_posting_path, class: 'btn btn-default' %>
