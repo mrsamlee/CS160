@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20160503013043) do
+ActiveRecord::Schema.define(version: 20160503053842) do
 
   create_table "postings", force: :cascade do |t|
     t.datetime "created_at",  null: false
@@ -28,13 +28,6 @@ ActiveRecord::Schema.define(version: 20160503013043) do
     t.string   "country"
   end
 
-  create_table "postings_transactions", id: false, force: :cascade do |t|
-    t.integer "posting_id",     null: false
-    t.integer "transaction_id", null: false
-  end
-
-  add_index "postings_transactions", ["transaction_id", "posting_id"], name: "index_postings_transactions_on_transaction_id_and_posting_id"
-
   create_table "reviews", force: :cascade do |t|
     t.integer  "rating"
     t.text     "content"
@@ -48,21 +41,18 @@ ActiveRecord::Schema.define(version: 20160503013043) do
   add_index "reviews", ["user_id"], name: "index_reviews_on_user_id"
 
   create_table "transactions", force: :cascade do |t|
-    t.datetime "created_at", null: false
-    t.datetime "updated_at", null: false
-    t.integer  "posting_id"
+    t.datetime "created_at",  null: false
+    t.datetime "updated_at",  null: false
     t.integer  "user_id"
+    t.string   "name"
+    t.float    "price"
+    t.integer  "producer_id"
+    t.string   "street"
+    t.string   "city"
+    t.string   "state"
   end
 
-  add_index "transactions", ["posting_id"], name: "index_transactions_on_posting_id"
   add_index "transactions", ["user_id"], name: "index_transactions_on_user_id"
-
-  create_table "transactions_users", id: false, force: :cascade do |t|
-    t.integer "user_id",        null: false
-    t.integer "transaction_id", null: false
-  end
-
-  add_index "transactions_users", ["user_id", "transaction_id"], name: "index_transactions_users_on_user_id_and_transaction_id"
 
   create_table "users", force: :cascade do |t|
     t.string   "email",                  default: "", null: false

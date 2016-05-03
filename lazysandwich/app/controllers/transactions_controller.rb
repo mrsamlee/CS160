@@ -14,7 +14,13 @@ class TransactionsController < ApplicationController
 
   def create
     @transaction = Transaction.new
-    @transaction.posting = Posting.find(params[:posting_id])
+    @posting = Posting.find(params[:posting_id])
+    @transaction.name = @posting.name
+    @transaction.price = @posting.price
+    @transaction.producer_id = @posting.user_id
+    @transaction.street = @posting.street
+    @transaction.city = @posting.city
+    @transaction.state = @posting.state
     @transaction.user = current_user
     @transaction.save
     redirect_to root_path

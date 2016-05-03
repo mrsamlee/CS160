@@ -1,7 +1,7 @@
 class Posting < ActiveRecord::Base
   belongs_to :user
   has_many :reviews
-  has_and_belongs_to_many :owner, foreign_key: "posting_id", class_name: "Transaction"
+  # has_many :owner, foreign_key: "posting_id", class_name: "Transaction"
 
   geocoded_by :address
   after_validation :geocode, if: ->(obj){ obj.street_changed? and obj.city_changed? and obj.state_changed?}

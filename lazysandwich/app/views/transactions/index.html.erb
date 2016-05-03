@@ -17,10 +17,11 @@
   <tbody>
     <% @customer_transactions.each do |transaction| %>
       <tr>
+        <% @producer = Posting.find_by_id(transaction.producer_id) %>
         <td><%= transaction.id %> </td>
-        <td><%= transaction.posting.name %> </td>
-        <td><%= transaction.posting.user.email %> </td>
-        <td><%= transaction.posting.price %> </td>
+        <td><%= transaction.name %> </td>
+        <td><%= @producer.user.email %> </td>
+        <td><%= transaction.price %> </td>
         <td><%= link_to 'Show', transaction %></td>
       </tr>
     <% end %>
@@ -46,11 +47,11 @@
   <tbody>
     <% @producer_transactions.each do |transaction| %>
       <tr>
-        <% if transaction.posting.user == current_user %>
+        <% if transaction.producer_id == current_user.id %>
         <td><%= transaction.id %> </td>
-        <td><%= transaction.posting.name %> </td>
+        <td><%= transaction.name %> </td>
         <td><%= transaction.user.email %> </td>
-        <td><%= transaction.posting.price %> </td>
+        <td><%= transaction.price %> </td>
         <td><%= link_to 'Show', transaction %></td>
         <td><%= link_to 'Cancel', destroy_order_path(transaction), method: :delete, data: { confirm: 'Are you sure?' } %></td>
         <% end %> 
