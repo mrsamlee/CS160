@@ -28,13 +28,6 @@ ActiveRecord::Schema.define(version: 20160503013043) do
     t.string   "country"
   end
 
-  create_table "postings_transactions", id: false, force: :cascade do |t|
-    t.integer "posting_id",     null: false
-    t.integer "transaction_id", null: false
-  end
-
-  add_index "postings_transactions", ["transaction_id", "posting_id"], name: "index_postings_transactions_on_transaction_id_and_posting_id"
-
   create_table "reviews", force: :cascade do |t|
     t.integer  "rating"
     t.text     "content"
@@ -44,7 +37,6 @@ ActiveRecord::Schema.define(version: 20160503013043) do
     t.integer  "posting_id"
   end
 
-  add_index "reviews", ["posting_id"], name: "index_reviews_on_posting_id"
   add_index "reviews", ["user_id"], name: "index_reviews_on_user_id"
 
   create_table "transactions", force: :cascade do |t|
@@ -79,7 +71,6 @@ ActiveRecord::Schema.define(version: 20160503013043) do
     t.datetime "updated_at",                          null: false
     t.float    "latitude"
     t.float    "longitude"
-    t.string   "ipaddress"
   end
 
   add_index "users", ["email"], name: "index_users_on_email", unique: true
