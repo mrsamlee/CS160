@@ -2,10 +2,8 @@ class TransactionsController < ApplicationController
   before_action :authenticate_user!
 
   def index
-    #transactions made by the current user
     @customer_transactions = Transaction.where(:user => current_user)
-    #logical AND to get the postings of the current user in the transactions table
-    # @producer_transactions = []
+    #will have to go through extra checks in the view
     @producer_transactions = Transaction.where.not(:user => current_user)
   end
 
