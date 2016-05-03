@@ -37,7 +37,6 @@ ActiveRecord::Schema.define(version: 20160503053842) do
     t.integer  "posting_id"
   end
 
-  add_index "reviews", ["posting_id"], name: "index_reviews_on_posting_id"
   add_index "reviews", ["user_id"], name: "index_reviews_on_user_id"
 
   create_table "transactions", force: :cascade do |t|
@@ -69,7 +68,6 @@ ActiveRecord::Schema.define(version: 20160503053842) do
     t.datetime "updated_at",                          null: false
     t.float    "latitude"
     t.float    "longitude"
-    t.string   "ipaddress"
   end
 
   add_index "users", ["email"], name: "index_users_on_email", unique: true

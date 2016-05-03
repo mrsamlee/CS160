@@ -18,7 +18,7 @@ handler.buildMap({ provider: {}, internal: {id: 'map'}}, function(){
 });
 </script>
 
-<table>
+<table class = "table table-hover">
   <thead>
     <tr>
       <th>Producer</th>
@@ -41,7 +41,7 @@ handler.buildMap({ provider: {}, internal: {id: 'map'}}, function(){
         <td><%= link_to 'Edit', edit_posting_path(posting) %></td>
         <td><%= link_to 'Destroy', posting, method: :delete, data: { confirm: 'Are you sure?' } %></td>
         <% else %>
-        <td><%= link_to 'Buy', make_order_path(posting), method: :post %><td>
+        <td><%= link_to 'Buy', make_order_path(posting), method: :post, class: 'btn btn-success' %><td>
         <% end %>
       </tr>
     <% end %>
@@ -50,4 +50,4 @@ handler.buildMap({ provider: {}, internal: {id: 'map'}}, function(){
 
 <br>
 
-<%= link_to 'New Posting', new_posting_path %>
+<%= link_to 'New Posting', new_posting_path, class: 'btn btn-default' %>
