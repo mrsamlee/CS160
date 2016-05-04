@@ -13,6 +13,11 @@ class PostingsController < ApplicationController
             marker.title posting.name
             marker.infowindow "<h4><u>#{posting_link}</u></h4> 
                        <i>#{posting.street}</i>"
+            marker.picture({
+                  :url => "http://i.picresize.com/images/2016/05/03/wx4ua.png",
+                  :width   => 32,
+                  :height  => 32
+                 })
     end
   end
 
