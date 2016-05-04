@@ -1,7 +1,6 @@
 <script src="//maps.google.com/maps/api/js?v=3.18&sensor=false&client=&key=&libraries=geometry&language=&hl=&region="></script> 
 <script src="//google-maps-utility-library-v3.googlecode.com/svn/tags/markerclustererplus/2.0.14/src/markerclusterer_packed.js"></script>
 
-<<<<<<< HEAD
 <%= form_tag postings_path, :method => 'get' do %>
   <p>
     <%= text_field_tag :search, params[:search] %>
@@ -9,8 +8,6 @@
   </p>
 <% end %>
 
-=======
->>>>>>> Added the demo project
 <h1>Listing Postings</h1>
 
 <div style='width: 800px;'>
@@ -29,17 +26,10 @@ handler.buildMap({ provider: {}, internal: {id: 'map'}}, function(){
 <table class = "table table-hover">
   <thead>
     <tr>
-<<<<<<< HEAD
       <th>Sandwich</th>
       <th>Price</th>
       <th>Ingredients</th>
       <th>Producer</th>
-=======
-      <th>Producer</th>
-      <th>Sandwich</th>
-      <th>Price</th>
-      <th>Ingredients</th>
->>>>>>> Added the demo project
       <th colspan="3"></th>
     </tr>
   </thead>
@@ -47,17 +37,10 @@ handler.buildMap({ provider: {}, internal: {id: 'map'}}, function(){
   <tbody>
     <% @postings.each do |posting| %>
       <tr>
-<<<<<<< HEAD
         <td><%= posting.name %></td>
         <td><%= posting.price %></td>
         <td><%= posting.ingredients %></td>
         <td><%= posting.user.email %><td>
-=======
-        <td><%= posting.user.email %><td>
-        <td><%= posting.name %></td>
-        <td><%= posting.price %></td>
-        <td><%= posting.ingredients %></td>
->>>>>>> Added the demo project
         <td><%= link_to 'Show', posting %></td>
         <%if posting.user == current_user %>
         <td><%= link_to 'Edit', edit_posting_path(posting) %></td>

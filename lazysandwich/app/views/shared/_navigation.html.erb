@@ -6,15 +6,9 @@
 
 <% if user_signed_in? -%>
   <ul class="nav navbar-nav navbar-right">
-<<<<<<< HEAD
     <li><%= link_to 'Postings', postings_path,'data-no-turbolink' => true %></li>
     <li><%= link_to 'Orders', transactions_path,'data-no-turbolink' => true %></li>
     <li><%= link_to 'Sign out', destroy_user_session_path, :method => :delete,'data-no-turbolink' => true %></li>
-=======
-    <li><%= link_to 'Postings', postings_path %></li>
-    <li><%= link_to 'Orders', transactions_path %></li>
-    <li><%= link_to 'Sign out', destroy_user_session_path, :method => :delete %></li>
->>>>>>> Added the demo project
   </ul>
 <% else -%>
   <ul class="nav navbar-nav pull-right">
