@@ -5,7 +5,11 @@ class PostingsController < ApplicationController
   # GET /postings
   # GET /postings.json
   def index
-    @postings = Posting.all
+    if params[:search].present?
+      @postings = Posting.near(params[:search])
+    else
+      @postings = Posting.all
+    end
     @json = Gmaps4rails.build_markers(@postings) do |posting, marker|
             posting_link = view_context.link_to posting.name, posting_path(posting)
             marker.lat posting.latitude
