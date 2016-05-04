@@ -1,0 +1,17 @@
+<div class="header">
+  <div class="container">
+     <h1>Reviews</h1>
+  </div>
+</div>
+<div class="reviews">
+  <div class="container">
+<% @reviews.each do |f| %>
+    <div class="review">
+
+      <p class="content"><%= f.content %></p>
+  <p class="time"><%= f.created_at %></p>
+</div>
+<% end %>
+<%= link_to 'New Review', "reviews/new" %>
+</div>
+</div>

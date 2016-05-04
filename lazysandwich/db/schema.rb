@@ -37,6 +37,10 @@ ActiveRecord::Schema.define(version: 20160503053842) do
     t.integer  "posting_id"
   end
 
+<<<<<<< HEAD
+=======
+  add_index "reviews", ["posting_id"], name: "index_reviews_on_posting_id"
+>>>>>>> b2d4e03ec808f03db555a18087d055ec47a65bd2
   add_index "reviews", ["user_id"], name: "index_reviews_on_user_id"
 
   create_table "transactions", force: :cascade do |t|
