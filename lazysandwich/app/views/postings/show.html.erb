@@ -1,5 +1,5 @@
 <p id="notice"><%= notice %></p>
-<%= link_to 'Back', postings_path %>
+
 
 <table class = "table">
   <thead>
@@ -49,3 +49,7 @@
   </p>
 <% end %>
 <% end %>
+
+<%= link_to 'Back', postings_path, 'data-no-turbolink' => true, class: 'btn btn-default' %>
+
+

@@ -2,5 +2,5 @@
 
 <%= render 'form' %>
 
-<%= link_to 'Show', @posting %> |
-<%= link_to 'Back', postings_path %>
+<%= link_to 'Show', @posting, 'data-no-turbolink' => true, class: 'btn btn-default' %> |
+<%= link_to 'Back', postings_path, 'data-no-turbolink' => true, class: 'btn btn-default' %>
