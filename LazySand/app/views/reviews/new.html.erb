@@ -1,0 +1,17 @@
+<div class="header">
+  <div class="container">
+     <h1>Reviews</h1>
+  </div>
+</div>
+<div class="create">
+  <div class="container">
+<%= form_for @review do |f| %>
+    <div class="field">
+      <%= f.text_field :content %>
+    </div>
+    <div class="actions">
+      <%= f.submit "Create" %>
+    </div>
+<% end %>
+</div>
+</div>
