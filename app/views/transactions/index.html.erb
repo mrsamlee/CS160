@@ -1,0 +1,66 @@
+<p id="notice"><%= notice %></p>
+
+
+<h1>Sandwiches you bought</h1>
+<% if @customer_transactions.count != 0 %>
+<table>
+  <thead>
+    <tr>
+      <th>Order Number</th>
+      <th>Sandwich Name</th>
+      <th>Producer</th>
+      <th>Price</th>
+      <th colspan="3"></th>
+    </tr>
+  </thead>
+
+  <tbody>
+    <% @customer_transactions.each do |transaction| %>
+      <tr>
+        <% @producer = Posting.find_by_id(transaction.producer_id) %>
+        <td><%= transaction.id %> </td>
+        <td><%= transaction.name %> </td>
+        <td><%= @producer.user.email %> </td>
+        <td><%= transaction.price %> </td>
+        <td><%= link_to 'Show', transaction %></td>
+      </tr>
+    <% end %>
+  </tbody>
+</table>
+<% else %>
+<p> No orders. Go try out other producers' sandwiches! </p>
+<% end %>
+
+<h1>Orders for your Sandwich(es)</h1>
+<% if @producer_transactions.count != 0 %>
+<table>
+  <thead>
+    <tr>
+      <th>Order Number</th>
+      <th>Sandwich Name</th>
+      <th>Consumer</th>
+      <th>Price</th>
+      <th colspan="3"></th>
+    </tr>
+  </thead>
+
+  <tbody>
+    <% @producer_transactions.each do |transaction| %>
+      <tr>
+        <% if transaction.producer_id == current_user.id %>
+        <td><%= transaction.id %> </td>
+        <td><%= transaction.name %> </td>
+        <td><%= transaction.user.email %> </td>
+        <td><%= transaction.price %> </td>
+        <td><%= link_to 'Show', transaction %></td>
+        <td><%= link_to 'Cancel', destroy_order_path(transaction), method: :delete, data: { confirm: 'Are you sure?' } %></td>
+        <% end %> 
+      </tr>
+    <% end %>
+  </tbody>
+</table>
+<% else %>
+<p>No orders yet. Orders will be flooding in soon - just wait!</p>
+<% end %>
+
+<br>
