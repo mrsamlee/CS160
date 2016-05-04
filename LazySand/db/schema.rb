@@ -15,7 +15,11 @@
 ActiveRecord::Schema.define(version: 20160425052221) do
 =======
 ActiveRecord::Schema.define(version: 20160425035955) do
+<<<<<<< HEAD
 >>>>>>> Added a function Sign up page, need to link it to the homepage and add css
+=======
+>>>>>>> b2d4e03ec808f03db555a18087d055ec47a65bd2
+>>>>>>> 0941525d22896b01c9857d6f58ba35f2aad3fdf0
 
   create_table "accounts", force: :cascade do |t|
     t.string   "username"
@@ -52,7 +56,11 @@ ActiveRecord::Schema.define(version: 20160425035955) do
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
   end
+<<<<<<< HEAD
 >>>>>>> Added a function Sign up page, need to link it to the homepage and add css
+=======
+>>>>>>> b2d4e03ec808f03db555a18087d055ec47a65bd2
+>>>>>>> 0941525d22896b01c9857d6f58ba35f2aad3fdf0
 
   create_table "products", force: :cascade do |t|
     t.string   "producer"
@@ -86,7 +94,11 @@ ActiveRecord::Schema.define(version: 20160425035955) do
 =======
   end
 
+<<<<<<< HEAD
 >>>>>>> Added a function Sign up page, need to link it to the homepage and add css
+=======
+>>>>>>> b2d4e03ec808f03db555a18087d055ec47a65bd2
+>>>>>>> 0941525d22896b01c9857d6f58ba35f2aad3fdf0
   create_table "sandwiches", force: :cascade do |t|
     t.float    "price"
     t.datetime "created_at", null: false
@@ -144,5 +156,9 @@ ActiveRecord::Schema.define(version: 20160425035955) do
     t.datetime "updated_at",      null: false
   end
 
+<<<<<<< HEAD
 >>>>>>> Added a function Sign up page, need to link it to the homepage and add css
+=======
+>>>>>>> b2d4e03ec808f03db555a18087d055ec47a65bd2
+>>>>>>> 0941525d22896b01c9857d6f58ba35f2aad3fdf0
 end
