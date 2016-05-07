@@ -15,11 +15,10 @@
 
   <tbody>
      <tr>     
-      <% @producer = Posting.find_by_id(@transaction.producer_id) %>
        <td><%= @transaction.id %></td>
        <td><%= @transaction.user.email %></td>
-       <td><%= @producer.user.email %></td>
-       <td><%= @producer.street %>, <%= @producer.city %></td>
+       <td><%= @transaction.producer %></td>
+       <td><%= @transaction.street %>, <%= @transaction.city %></td>
        <td><%= @transaction.price %></td>
        <td><%= @transaction.created_at %></td>
       </tr>

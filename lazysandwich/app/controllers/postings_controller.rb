@@ -15,8 +15,9 @@ class PostingsController < ApplicationController
             marker.lat posting.latitude
             marker.lng posting.longitude
             marker.title posting.name
-            marker.infowindow "<h4><u>#{posting_link}</u></h4> 
-                       <i>#{posting.street}</i>"
+            marker.infowindow "<h5><u>#{posting_link}</u></h5> 
+                       <i>#{posting.street}, #{posting.city}</i><br>
+                       #{posting.user.email}"
             marker.picture({
                   :url => "http://i.picresize.com/images/2016/05/03/wx4ua.png",
                   :width   => 32,

@@ -3,6 +3,7 @@
 		<div class="pull-left">
 			<p class="lead"><strong><%=review.user.email %></strong> says </p>
 			<p class="lead"><%= review.content %></p>
+			<p class="text-left"><font size="3"><strong><%= review.rating %>/5</strong></font></p>
 			<p><font size="1">Submitted on<strong> <%= review.created_at.strftime("%Y-%m-%d") %></strong></font></p>
 		</div>
 

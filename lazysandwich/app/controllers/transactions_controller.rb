@@ -15,6 +15,8 @@ class TransactionsController < ApplicationController
     @transaction.name = @posting.name
     @transaction.price = @posting.price
     @transaction.producer_id = @posting.user_id
+    @transaction.producer = @posting.user.email
+    @transaction.posting = @posting.id
     @transaction.street = @posting.street
     @transaction.city = @posting.city
     @transaction.state = @posting.state
