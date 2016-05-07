@@ -1,12 +1,13 @@
 <p id="notice"><%= notice %></p>
 
-
+<h>Sandwich made by <%=@posting.user.email %></h>
 <table class = "table">
   <thead>
     <tr>
       <th>Name</th>
       <th>Ingredients</th>
       <th>Price</th>
+      <th>Address</th>
       <th colspan="3"></th>
     </tr>
   </thead>
@@ -16,6 +17,7 @@
        <td><%= @posting.name %></td>
        <td><%= @posting.ingredients %></td>
        <td><%= @posting.price %></td>
+       <td><%= @posting.street %>, <%= @posting.city %></td>
       </tr>
   </tbody>
 </table>

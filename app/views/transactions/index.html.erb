@@ -16,13 +16,15 @@
 
   <tbody>
     <% @customer_transactions.each do |transaction| %>
-      <tr>
-        <% @producer = Posting.find_by_id(transaction.producer_id) %>
+      <tr>     
         <td><%= transaction.id %> </td>
         <td><%= transaction.name %> </td>
-        <td><%= @producer.user.email %> </td>
+        <td><%= transaction.producer %> </td>
         <td><%= transaction.price %> </td>
         <td><%= link_to 'Show', transaction %></td>
+        <% if Posting.exists?(id: transaction.posting) %>
+        <td><%= link_to 'Write A Review!', Posting.find_by_id(transaction.posting) %></td>
+        <% end %>
       </tr>
     <% end %>
   </tbody>

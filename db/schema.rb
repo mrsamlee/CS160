@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20160503053842) do
+ActiveRecord::Schema.define(version: 20160507112611) do
 
   create_table "postings", force: :cascade do |t|
     t.datetime "created_at",  null: false
@@ -50,6 +50,8 @@ ActiveRecord::Schema.define(version: 20160503053842) do
     t.string   "street"
     t.string   "city"
     t.string   "state"
+    t.string   "producer"
+    t.string   "posting"
   end
 
   add_index "transactions", ["user_id"], name: "index_transactions_on_user_id"
