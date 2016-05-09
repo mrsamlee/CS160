@@ -1,9 +1,9 @@
 <p id="notice"><%= notice %></p>
 
 
-<h1>Sandwiches you bought</h1>
+<h1>Your Orders</h1>
 <% if @customer_transactions.count != 0 %>
-<table>
+<table class = "table">
   <thead>
     <tr>
       <th>Order Number</th>
@@ -16,13 +16,15 @@
 
   <tbody>
     <% @customer_transactions.each do |transaction| %>
-      <tr>
-        <% @producer = Posting.find_by_id(transaction.producer_id) %>
+      <tr>     
         <td><%= transaction.id %> </td>
         <td><%= transaction.name %> </td>
-        <td><%= @producer.user.email %> </td>
+        <td><%= transaction.producer %> </td>
         <td><%= transaction.price %> </td>
         <td><%= link_to 'Show', transaction %></td>
+        <% if Posting.exists?(id: transaction.posting) %>
+        <td><%= link_to 'Write A Review!', Posting.find_by_id(transaction.posting) %></td>
+        <% end %>
       </tr>
     <% end %>
   </tbody>
@@ -31,9 +33,9 @@
 <p> No orders. Go try out other producers' sandwiches! </p>
 <% end %>
 
-<h1>Orders for your Sandwich(es)</h1>
+<h1>Orders for your Sandwich</h1>
 <% if @producer_transactions.count != 0 %>
-<table>
+<table class = "table">
   <thead>
     <tr>
       <th>Order Number</th>

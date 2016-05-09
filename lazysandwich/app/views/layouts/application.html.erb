@@ -5,6 +5,7 @@
   <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track' => true %>
   <%= javascript_include_tag 'application', 'data-turbolinks-track' => true %>
   <%= csrf_meta_tags %>
+  <link rel="shortcut icon" type="image/png" href="https://33.media.tumblr.com/avatar_01ed0e47dd81_128.png" />
 </head>
 <body>
 
@@ -22,13 +23,13 @@
       </div>
       <div class="row">
         <div class="col-xs-3">
-          <h3>Dis is Logo</h3>
           <img src = https://33.media.tumblr.com/avatar_01ed0e47dd81_128.png alt = 'sandwich' />
           <% if user_signed_in? %>
             <p><h4>Welcome </h4><%= "#{current_user.email}" %></p>
 		      <% end %>
 
         </div>
+        
         <div class="col-xs-9">
          <main id="content">
 			<%= yield %>
@@ -38,5 +39,20 @@
     </div>
 
 </div>
+
+    <footer class="footer">
+      <div class="container">
+        <span class="text-muted">&copy; Underground Railsroad 2016</span>
+      </div>
+    </footer>
+
+    <!-- Bootstrap core JavaScript
+    ================================================== -->
+    <!-- Placed at the end of the document so the pages load faster -->
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/2.1.4/jquery.min.js"></script>
+    <script>window.jQuery || document.write('<script src="../../assets/js/vendor/jquery.min.js"><\/script>')</script>
+    <script src="../../dist/js/bootstrap.min.js"></script>
+    <!-- IE10 viewport hack for Surface/desktop Windows 8 bug -->
+    <script src="../../assets/js/ie10-viewport-bug-workaround.js"></script>
 </body>
 </html>
