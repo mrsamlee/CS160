@@ -1,0 +1,28 @@
+<p id="notice"><%= notice %></p>
+<% @transaction = Transaction.find(params[:id])%>
+<table class = "table">
+  <thead>
+    <tr>
+      <th>Order number<th>
+      <th>Customer email</th>
+      <th>Producer email</th>
+      <th>Address</th>
+      <th>Price</th>
+      <th>Order Time<th>
+    </tr>
+  </thead>
+
+  <tbody>
+     <tr class = "active">     
+       <td><%= @transaction.id %></td>
+       <td></td>
+       <td><%= @transaction.user.email %></td>
+       <td><%= @transaction.producer %></td>
+       <td><%= @transaction.street %>, <%= @transaction.city %></td>
+       <td><%= @transaction.price %></td>
+       <td><%= @transaction.created_at %></td>
+      </tr>
+  </tbody>
+</table>
+
+<%= link_to 'Back', transactions_path %>
