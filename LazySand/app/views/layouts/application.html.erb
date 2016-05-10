@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>LazySand</title>
+  <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track' => true %>
+  <%= javascript_include_tag 'application', 'data-turbolinks-track' => true %>
+  <%= csrf_meta_tags %>
+</head>
+<body>
+
+ <%= render 'shared/navigation' %>
+
+ <div id="main-container" class="container">
+ 	<div class="row">
+        <div class="col-xs-12">
+          <% flash.each do |name, msg| -%>
+            <%= content_tag :div, msg, class: "alert alert-#{name}" %>
+          <% end -%>
+        </div>
+      </div>
+      <div class="row">
+        <div class="col-xs-3">
+          <h3>Wahzawp</h3>
+          <img src = http://i.imgur.com/vsDIhDC.gif?1 alt = 'sam' />
+          <p><h4>User:</h4> Samson Lee</p>
+          <p><h4>Location:</h4> San Jose State University</p>
+        </div>
+        <div class="col-xs-9">
+          <%= yield %>
+        </div>
+      </div>
+    </div>
+
+</body>
+</html>

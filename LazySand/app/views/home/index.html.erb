@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>LazySand</title>
+  <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track' => true %>
+  <%= javascript_include_tag 'application', 'data-turbolinks-track' => true %>
+  <%= csrf_meta_tags %>
+</head>
+<body>
+
+<%= render 'shared/navigation' %>
+
+<h1>Welcome</h1>
+
+<<img src = http://cdn.speckyboy.com/wp-content/uploads/2014/05/ux_ui_02.jpg
+	alt = 'sandwich'/>
+
+<h2>Introduction</h2>
+<p>LazySandwich is a web application that satisfies your desire for a homemade sandwich when you are miles away from home. LazySandwich also enables you  to make homemade sandwiches from the available ingredients in your fridge for hungry customers around the corner. Speciality sandwiches are the number one go-to’s for this application - giving customers a different, unique tasting sandwich every time. This is an application that connects people in sandwich making matrimony. Choose from many different sandwich making users near on your location!
+</p>
+
+<p><%= link_to products_path, class: 'btn btn-primary' do %>
+  <i class="glyphicon glyphicon-chevron-right"></i> Producer Login
+<% end %>
+</p>
+<p><%= link_to requests_path, class: 'btn btn-primary' do %>
+  <i class="glyphicon glyphicon-chevron-right"></i> Consumer Login
+<% end %></p>
+
+
+</body>
+</html>

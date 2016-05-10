@@ -1,0 +1,42 @@
+<ul class="nav nav-tabs" role="tablist">
+  <li><%= link_to 'List of Requests', requests_path %></li>
+  <li><%= link_to 'New Requests', new_request_path %></li>
+  <li><%= link_to 'Nearby Sandwiches', products_list_path, 'data-no-turbolink' => true %></li>
+  <li class="active"><%= link_to 'Pending', products_transactions_path %></li>
+</ul>
+
+<h1>Pending Transactions</h1>
+
+<table class = "table">
+  <thead>
+    <tr>
+      <th>Producer</th>
+      <th>Name</th>
+      <th>Price</th>
+      <th>Ingredients</th>
+      <th>Location</th>
+      <th colspan="3"></th>
+    </tr>
+  </thead>
+
+  <tbody>
+    <% @products.each do |product| %>
+      <tr>
+        <td><%= product.producer %></td>
+        <td><%= product.name %></td>
+        <td><%= product.price %></td>
+        <td><%= product.ingredients %></td>
+        <td><%= product.location %></td>
+        <th><%= link_to products_confirm_path, class: 'btn btn-success' do %>
+          <i class="glyphicon glyphicon-plus"></i> Confirm
+        <% end %></th>
+
+        <th><button class="btn btn-danger" type="submit"><i class="glyphicon glyphicon-minus"></i> Cancel</button></th>
+      </tr>
+    <% end %>
+  </tbody>
+</table>
+
+<%= link_to products_path, class: 'btn btn-primary' do %>
+  <i class="glyphicon glyphicon-chevron-left"></i> Back
+<% end %>

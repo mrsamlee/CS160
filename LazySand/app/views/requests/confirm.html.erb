@@ -1,0 +1,24 @@
+<h1>Order confirmed!</h1>
+
+<p>You have successfully sold a "Turkey Burkey" to "Peter Pham" for $6 dollars.</p>
+
+<h2>Rate and review?</h2>
+
+<form role="form">
+  <div class="form-group">
+    <label for="review">Review</label>
+    <input type="text" id="review" name="review" class="form-control" />
+  </div>
+  <div class="form-group">
+    <img src = http://voidcanvas.com/wp-content/uploads/2014/02/star-rating.png alt = "review" />
+  </div>
+
+  <input type="submit" value="Submit" />
+  <input type="button" value="Cancel" />
+</form>
+
+<br>
+
+<%= link_to products_path, class: 'btn btn-primary' do %>
+  <i class="glyphicon glyphicon-chevron-left"></i> Back
+<% end %>

@@ -1,0 +1,42 @@
+<ul class="nav nav-tabs" role="tablist">
+  <li class="active"><%= link_to 'List of Requests', requests_path %></li>
+  <li><%= link_to 'New Requests', new_request_path %></li>
+  <li><%= link_to 'Nearby Sandwiches', products_list_path, 'data-no-turbolink' => true %></li>
+  <li><%= link_to 'Pending', products_transactions_path %></li>
+</ul>
+
+<p id="notice"><%= notice %></p>
+
+<h1>Listing Requests</h1>
+
+<table class = "table">
+  <thead>
+    <tr>
+      <th>Consumer</th>
+      <th>Name</th>
+      <th>Ingredients</th>
+      <th>Location</th>
+      <th colspan="3"></th>
+    </tr>
+  </thead>
+
+  <tbody>
+    <% @requests.each do |request| %>
+      <tr>
+        <td><%= request.consumer %></td>
+        <td><%= request.name %></td>
+        <td><%= request.ingredients %></td>
+        <td><%= request.location %></td>
+        <td><%= link_to 'Show', request %></td>
+        <td><%= link_to 'Edit', edit_request_path(request) %></td>
+        <td><%= link_to 'Destroy', request, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+      </tr>
+    <% end %>
+  </tbody>
+</table>
+
+<br>
+
+<p><%= link_to root_path, class: 'btn btn-primary' do %>
+  <i class="glyphicon glyphicon-chevron-left"></i> Logout
+<% end %></p>

@@ -1,0 +1,11 @@
+<h1>Cats! Choose your favorite</h1>
+
+<div><a href="http://localhost:3000/">Return to form</a></div>
+<div><a href="http://localhost:3000/userinfo/">View Users</a></div>
+
+<% @cats.each do |cat| %>
+<h2><%= cat.name %></h2>
+<p>Age is <%= cat.age %></p>
+<img src = <%= cat.picture %>
+	alt = 'picture of this kitty'/>
+<% end %>

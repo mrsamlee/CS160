@@ -1,0 +1,15 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+
+one:
+  producer: MyString
+  name: MyString
+  price: 1.5
+  ingredients: MyText
+  location: MyString
+
+two:
+  producer: MyString
+  name: MyString
+  price: 1.5
+  ingredients: MyText
+  location: MyString

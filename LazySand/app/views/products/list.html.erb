@@ -1,0 +1,60 @@
+<script src="//maps.google.com/maps/api/js?v=3.18&sensor=false&client=&key=&libraries=geometry&language=&hl=&region="></script> 
+<script src="//google-maps-utility-library-v3.googlecode.com/svn/tags/markerclustererplus/2.0.14/src/markerclusterer_packed.js"></script>
+
+<ul class="nav nav-tabs" role="tablist">
+  <li><%= link_to 'List of Requests', requests_path %></li>
+  <li><%= link_to 'New Requests', new_request_path %></li>
+  <li class="active"><%= link_to 'Nearby Sandwiches', products_list_path, 'data-no-turbolink' => true %></li>
+  <li><%= link_to 'Pending', products_transactions_path %></li>
+</ul>
+
+<h1>Listing products</h1>
+
+<div style='width: 800px;'>
+  <div id="multi_markers" style='width: 800px; height: 400px;'></div>
+</div>
+
+<script type="text/javascript">
+var handler = Gmaps.build('Google');
+handler.buildMap({ internal: {id: 'multi_markers'}}, function(){
+  var markers = handler.addMarkers([
+    { lat: 37.336079, lng: -121.880453},
+    { lat: 37.332111, lng: -121.882915},
+    { lat: 37.335245, lng: -121.887030},
+    { lat: 37.339392, lng: -121.888391},
+    { lat: 37.330426, lng: -121.881879}
+  ]);
+  handler.bounds.extendWith(markers);
+  handler.fitMapToBounds();
+});
+</script>
+
+<table class = "table">
+  <thead>
+    <tr>
+      <th>Producer</th>
+      <th>Name</th>
+      <th>Price</th>
+      <th>Ingredients</th>
+      <th>Location</th>
+      <th colspan="3"></th>
+    </tr>
+  </thead>
+
+  <tbody>
+    <% @products.each do |product| %>
+      <tr>
+        <td><%= product.producer %></td>
+        <td><%= product.name %></td>
+        <td><%= product.price %></td>
+        <td><%= product.ingredients %></td>
+        <td><%= product.location %></td>
+        <th><button class="btn btn-success" type="submit"><i class="glyphicon glyphicon-plus"></i> Buy</button></th>
+      </tr>
+    <% end %>
+  </tbody>
+</table>
+
+<%= link_to requests_path, class: 'btn btn-primary' do %>
+  <i class="glyphicon glyphicon-chevron-left"></i> Back
+<% end %>

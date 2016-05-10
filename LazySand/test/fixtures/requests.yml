@@ -1,0 +1,13 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+
+one:
+  consumer: MyString
+  name: MyString
+  ingredients: MyText
+  location: MyString
+
+two:
+  consumer: MyString
+  name: MyString
+  ingredients: MyText
+  location: MyString

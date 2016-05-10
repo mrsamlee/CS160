@@ -1,0 +1,14 @@
+<ul class="nav nav-tabs" role="tablist">
+  <li><%= link_to 'List of Requests', requests_path %></li>
+  <li class="active"><%= link_to 'New Requests', new_request_path %></li>
+  <li><%= link_to 'Nearby Sandwiches', products_list_path, 'data-no-turbolink' => true %></li>
+  <li><%= link_to 'Pending', products_transactions_path %></li>
+</ul>
+
+<h1>New Request</h1>
+
+<%= render 'form' %>
+
+<%= link_to products_path, class: 'btn btn-primary' do %>
+  <i class="glyphicon glyphicon-chevron-left"></i> Back
+<% end %>

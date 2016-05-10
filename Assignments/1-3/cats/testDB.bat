@@ -1,0 +1,1 @@
+bundle exec rails runner "eval(File.read 'populate.rb')"
