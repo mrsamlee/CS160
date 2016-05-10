@@ -37,7 +37,6 @@ ActiveRecord::Schema.define(version: 20160507112611) do
     t.integer  "posting_id"
   end
 
-  add_index "reviews", ["posting_id"], name: "index_reviews_on_posting_id"
   add_index "reviews", ["user_id"], name: "index_reviews_on_user_id"
 
   create_table "transactions", force: :cascade do |t|
